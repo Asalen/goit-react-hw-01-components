@@ -4,30 +4,31 @@ import styles from "./Statistics.module.css"
 
 const Statistics = ({ stats }) =>
     <
-    section > { /* <h2 className="statistics-title">Upload stats</h2> */ } {
-        title && < h2 className = "statistics-title" > Upload stats > { title } < /h2>} <
-        ul className = { styles.StatisticsList } > {
-                stats.map(item =>
-                    <
-                    li key = { item.id }
-                    className = { styles.StatisticsItem } >
-                    <
-                    span > { item.label }: < /span> <
-                    span > { item.percentage } % < /span> < /
-                    li >
-                )
-            } <
-            /ul> < /
-        section >
+    section >
+    <
+    h2 className = "statistics-title" > Upload stats < /h2> <
+ul className = { styles.StatisticsList } > {
+        stats.map(item =>
+            <
+            li key = { item.id }
+            className = { styles.StatisticsItem } >
+            <
+            span > { item.label }: < /span> <
+            span > { item.percentage } % < /span> < /
+            li >
+        )
+    } <
+    /ul> < /
+section >
 
 
-            Statistics.propTypes = {
-                stats: PropTypes.arrayOf(
-                    PropTypes.shape({
-                        id: PropTypes.string.isRequired,
-                        label: PropTypes.string.isRequired,
-                        percentage: PropTypes.number.isRequired,
-                    }),
-                ),
-            };
-        export default Statistics
+    Statistics.propTypes = {
+        stats: PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.string.isRequired,
+                label: PropTypes.string.isRequired,
+                percentage: PropTypes.number.isRequired,
+            }),
+        ),
+    };
+export default Statistics
